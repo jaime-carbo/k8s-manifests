@@ -1,0 +1,17 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: vps-ip-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 193.24.235.6/32        # Tu única IP pública
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: vps-l2
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - vps-ip-pool
