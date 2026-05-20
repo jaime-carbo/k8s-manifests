@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: api
-        image: hashicorp/http-echo
-        args: ["-text=BESITOS BONITA <3<3<3<3", "-listen=:80"]
+        image: ghcr.io/jaime-carbo/olas:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
