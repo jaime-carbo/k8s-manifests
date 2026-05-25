@@ -4,6 +4,7 @@ metadata:
   name: demo-api
 spec:
   replicas: 1
+  serviceAccountName: olas-reader
   selector:
     matchLabels:
       app: demo-api
