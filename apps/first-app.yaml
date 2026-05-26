@@ -17,7 +17,7 @@ spec:
       - name: ghcr-secret
       containers:
       - name: api
-        image: ghcr.io/jaime-carbo/olas:b9493c9256ea0ca0eba8ff878cf86cddb45390d7
+        image: ghcr.io/jaime-carbo/olas:606f158439bb11136995cdc02c9f5d5161504ef2
         imagePullPolicy: Always
         ports:
         - containerPort: 80
