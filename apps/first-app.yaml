@@ -4,7 +4,6 @@ metadata:
   name: demo-api
 spec:
   replicas: 1
-  serviceAccountName: olas-reader
   selector:
     matchLabels:
       app: demo-api
@@ -13,6 +12,7 @@ spec:
       labels:
         app: demo-api
     spec:
+      serviceAccountName: olas-reader
       imagePullSecrets:
       - name: ghcr-secret
       containers:
