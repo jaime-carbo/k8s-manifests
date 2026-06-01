@@ -21,6 +21,21 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+        env:
+        - name: MONGO_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: username
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: password
+        - name: MONGODB_URI
+          value: mongodb://$(MONGO_USERNAME):$(MONGO_PASSWORD)@mongodb-service:27017
+        - name: MONGODB_DB
+          value: demo
 ---
 apiVersion: v1
 kind: Service
